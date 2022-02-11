@@ -25,4 +25,4 @@ LABEL org.label-schema.docker.cmd="docker run --rm=true -ti koenighotze/${NAME}"
 
 COPY scan-docker-compose.sh /usr/local/bin/scan-docker-compose.sh
 
-ENTRYPOINT ["/usr/local/bin/scan-docker-compose.sh"]
+CMD ["/usr/local/bin/scan-docker-compose.sh"]
