@@ -1,4 +1,6 @@
 FROM bitnami/trivy:0.23.0
+# we must be root to do our magic
+# hadolint ignore=DL3002
 USER root
 RUN apt-get update \
     && apt-get install -y --no-install-recommends jq=1.5+dfsg-2+b1 \
