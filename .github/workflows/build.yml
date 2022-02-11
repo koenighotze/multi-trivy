@@ -6,7 +6,7 @@ jobs:
   lint:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2.3.4
+      - uses: actions/checkout@v2.4.0
       - run: |
           docker run -i hadolint/hadolint < Dockerfile
 
@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-20.04
     needs: lint
     steps:
-      - uses: actions/checkout@v2.3.4
+      - uses: actions/checkout@v2.4.0
       - name: Docker meta
         id: docker_meta
         uses: crazy-max/ghaction-docker-meta@v3.6.2
@@ -25,7 +25,7 @@ jobs:
             {{version}}
             {{major}}.{{minor}}
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1.3.0
+        uses: docker/setup-buildx-action@v1.6.0
         with:
           install: true
       - name: Get Time
@@ -35,12 +35,12 @@ jobs:
           timeZone: 110 # Berlin
           format: "YYYY-MM-DD-HH-mm-ss"
       - name: Login to DockerHub
-        uses: docker/login-action@v1.9.0
+        uses: docker/login-action@v1.12.0
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build
-        uses: docker/build-push-action@v2.4.0
+        uses: docker/build-push-action@v2.9.0
         with:
           context: .
           push: ${{ startsWith(github.ref, 'refs/tags/') }}
