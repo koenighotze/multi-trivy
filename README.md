@@ -1,0 +1,2 @@
+# multi-trivy
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/8330129e1d8e4073851eb0ac8c8b7c55)](https://app.codacy.com/gh/koenighotze/multi-trivy?utm_source=github.com&utm_medium=referral&utm_content=koenighotze/multi-trivy&utm_campaign=Badge_Grade_Settings)
